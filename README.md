@@ -18,3 +18,13 @@ Redis is an in memory database using based on key:value priciple, it is very fas
   <li>ttl name {Check Time to live for that key, -1 if indefinite, -2 if expired, >=0 if in countdown}</li>
   <li>expire name 10 {gives an expiration time to a key}</li>
 </ul>
+
+<h2>Storing arrays and Hashcodes based data in Redis</h2>
+
+**By default reddis stores all values in form of Strings, but we can also store Array/lists or HashCodes/Json data in REDIS**
+
+<ul>
+  <li>lpush friends john {adds john to list of friends}</li>
+  <li>lrange friends 0 -1 {get values in john from start to end}</li>
+  <li></li>
+</ul>
