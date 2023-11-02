@@ -13,5 +13,8 @@ Redis is an in memory database using based on key:value priciple, it is very fas
   <li>DEL name {delete key value pair}</li>
   <li>EXISTS name {checks if K-V pair is present}</li>
   <li>KEYS * {Get all keys in redis cache}</li>
-  <li>flushall {clear whole cache server}</li>
+  <li>FLUSHALL {clear whole cache server}</li>
+  <li>SETEX name 10 rahul {gives an expiration time to key in seconds}</li>
+  <li>ttl name {Check Time to live for that key, -1 if indefinite, -2 if expired, >=0 if in countdown}</li>
+  <li>expire name 10 {gives an expiration time to a key}</li>
 </ul>
