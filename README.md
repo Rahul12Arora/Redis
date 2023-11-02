@@ -6,7 +6,7 @@ Redis is an in memory database using based on key:value priciple, it is very fas
 <h1>Getting Started + Basics</h1>
 
 <ul>
-  <li>homebrew install redis {To install redis}</li>
+  <li>brew install redis {To install redis}</li>
   <li>redis-cli {run in parallel terminal to start redis}</li>
   <li>SET name rahul {Set key value pair}</li>
   <li>GET name {get value from key}</li>
@@ -19,12 +19,32 @@ Redis is an in memory database using based on key:value priciple, it is very fas
   <li>expire name 10 {gives an expiration time to a key}</li>
 </ul>
 
-<h2>Storing arrays and Hashcodes based data in Redis</h2>
+<h2>Storing array,set and Hashcodes based data in Redis</h2>
 
 **By default reddis stores all values in form of Strings, but we can also store Array/lists or HashCodes/Json data in REDIS**
 
 <ul>
-  <li>lpush friends john {adds john to list of friends}</li>
+  Array
+  <li>lpush friends john {adds john to list of friends from left}</li>
+  <li>rpush friends mike {adds mike to list of friends from right}</li>
   <li>lrange friends 0 -1 {get values in john from start to end}</li>
-  <li></li>
+  <li>lpop friends {removes leftmost element}</li>
+  <li>rpop friends {removes rightmost element}</li>
+</ul>
+
+<ul>
+  Set
+  <li>SADD hobbies "weight lifting" {adds value to the hobbies set}</li>
+  <li>SMEMBERS hobbies {gets all elements}</li>
+  <li>SREM hobbies "weight lifting" {Removes this value}</li>
+</ul>
+
+<ul>
+  HashCode
+  <li>HSET person name tom {in hashset perons => sets key name to tom}</li>
+  <li>HGET person name {gets value for key name in hashset person}</li>
+  <li>HSET person age 26</li>
+  <li>HGETALL person {Gives all key value pairs in person}</li>
+  <li>HDEL person age {removes age from hashmap}</li>
+  <li>HEXISTS person name {checks if key is present}</li>
 </ul>
