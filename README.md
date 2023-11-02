@@ -11,6 +11,7 @@ Redis is an in memory database using based on key:value priciple, it is very fas
   <li>SET name rahul {Set key value pair}</li>
   <li>GET name {get value from key}</li>
   <li>DEL name {delete key value pair}</li>
+  <li>EXISTS name {checks if K-V pair is present}</li>
   <li>KEYS * {Get all keys in redis cache}</li>
   <li>flushall {clear whole cache server}</li>
 </ul>
