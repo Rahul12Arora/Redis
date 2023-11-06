@@ -48,3 +48,30 @@ Redis is an in memory database using based on key:value priciple, it is very fas
   <li>HDEL person age {removes age from hashmap}</li>
   <li>HEXISTS person name {checks if key is present}</li>
 </ul>
+
+<h1>Use in Node</h1>
+
+```
+router.get('/bomcompletionperrahul', async (req, res) => {
+    const viewName = constant.viewName.BOMCompletionPercent;
+    try{
+        const value = await redisClient.get(viewName);
+        
+        if(value){
+            return res.status(200).send(JSON.parse(value))
+        }
+        else{
+            const view = db.collection(viewName);
+            const result = await view.find().toArray();
+            await redisClient.set(viewName, JSON.stringify(result), {
+                EX: expiry,
+                NX: true 
+              });
+            return res.status(200).send(result);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        return res.status(500).json({ error: 'Internal server error' });
+    }
+});
+```
