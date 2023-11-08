@@ -7,7 +7,8 @@ Redis is an in memory database using based on key:value priciple, it is very fas
 
 <ul>
   <li>brew install redis {To install redis}</li>
-  <li>redis-cli {run in parallel terminal to start redis}</li>
+  <li>redis-server {To start redis}</li>
+  <li>redis-cli {run in parallel terminal to run redis commands}</li>
   <li>SET name rahul {Set key value pair}</li>
   <li>GET name {get value from key}</li>
   <li>DEL name {delete key value pair}</li>
