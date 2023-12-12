@@ -76,3 +76,26 @@ router.get('/bomcompletionperrahul', async (req, res) => {
     }
 });
 ```
+
+<h1>Configuration And Setup</h1>
+
+```
+redis.conf file for configuring bind(used for specifying which ip can listen) and port(from which port out redis server is accessible)
+
+```
+
+Client redis on node
+```
+const Redis = require('redis');
+const redisClient = Redis.createClient({
+    host: '65.0.23.165', // specify the ip address of the machine where the reddis port is running
+    port: 5006,         // specify the port that is actively listening on the redis machine, should match the port in redis.conf file
+  });
+
+(async function(){
+    const redisConnection = await redisClient.on('error', err => console.log('Redis Client Error', err)).connect();
+})()
+
+
+module.exports = redisClient;
+```
