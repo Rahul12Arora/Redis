@@ -84,6 +84,11 @@ redis.conf file for configuring bind(used for specifying which ip can listen) an
 
 ```
 
+```
+bind 0.0.0.0 // to allow all ips to access redis
+requirepass // to authenticate a default user logging in
+```
+
 Client redis on node
 ```
 const Redis = require('redis');
